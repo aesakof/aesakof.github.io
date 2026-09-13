@@ -2,13 +2,13 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
 import { Menu, X } from "lucide-react"
 
 
 const links = [
     { href: "/projects", label: "Projects" },
     { href: "/about-me", label: "About Me"},
+    { href: "/ui-samples", label: "UI Samples"}
 ]
 
 function MobileLink({href, onClick, children}: {href: string, onClick?: () => void, children:React.ReactNode}) {
@@ -21,7 +21,6 @@ function MobileLink({href, onClick, children}: {href: string, onClick?: () => vo
 
 export default function NavBar() {
     const [smallMenuOpen, setSmallMenuOpen] = useState(false)
-    const pathname = usePathname()
 
     const closeMenu = () => setSmallMenuOpen(false)
 
@@ -42,7 +41,7 @@ export default function NavBar() {
                 {smallMenuOpen &&
                     <div className="md:hidden z-50 flex flex-col px-4 py-2 rounded-b-sm absolute top-full left-0 right-0 bg-surface border-b border-border">
                         {links.map(link => (
-                            <MobileLink key={link.href} href={link.href}>
+                            <MobileLink key={link.href} href={link.href} onClick={closeMenu}>
                                 {link.label}
                             </MobileLink>
                         ))}
