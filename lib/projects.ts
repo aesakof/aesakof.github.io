@@ -13,7 +13,7 @@ export const projects: Project[] = [
         "name": "Next.js Boilerplate",
         "url": "https://aesakof-next-starter-one.vercel.app/",
         "repoUrl": "https://github.com/aesakof/aesakof-next-starter",
-        "image": "@/public/projects/nextjs-boilerplate.png",
+        "image": "/projects/nextjs-boilerplate.png",
         "description": "DESCRIPTION HERE"
     },
     {
@@ -21,7 +21,15 @@ export const projects: Project[] = [
         "name": "Pokedex",
         "url": "https://aesakof.github.io/pokedex/",
         "repoUrl": "https://github.com/aesakof/pokedex",
+        "image": "/projects/pokedex.png",
+        "description": "DESCRIPTION HERE"
+    },
+    {
+        "slug": "dummy1",
+        "name": "DUMMY PROJECT",
+        "url": "https://aesakof.github.io/",
+        "repoUrl": "https://github.com/aesakof/",
         "image": "",
         "description": "DESCRIPTION HERE"
-    }
+    },
 ]

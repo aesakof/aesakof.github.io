@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
+import Image from "next/image"
 
 type CardProps = {
+    image?: { src: string; alt: string; width: number; height: number };
     title?: string;
     description?: string;
     children?: ReactNode;
@@ -9,9 +11,20 @@ type CardProps = {
     className?: string;
 };
 
-export default function Card({ title, description, children, footer, danger, className = "" }: CardProps) {
+export default function Card({ image, title, description, children, footer, danger, className = "" }: CardProps) {
     return (
-        <div className={`rounded-lg border bg-surface-raised flex flex-col ${danger ? "border-red-500/30" : "border-border"} ${className}`}>
+        <div className={`rounded-lg border bg-surface-raised flex flex-col overflow-hidden ${danger ? "border-red-500/30" : "border-border"} ${className}`}>
+            {image ? (
+                <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    className="w-full aspect-video object-cover"
+                />
+            ) : (
+                <div className="w-full aspect-video bg-surface" />
+            )}
             {(title || description) && (
                 <div className={`p-6 flex-1 ${children ? "pb-4" : ""}`}>
                     {title && <h3 className="text-base font-semibold leading-none text-text-primary">{title}</h3>}
