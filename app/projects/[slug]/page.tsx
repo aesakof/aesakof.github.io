@@ -27,7 +27,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     className="w-full aspect-video object-cover rounded-lg mb-6"
                 />
             )}
-            <h1 className="text-2xl font-semibold">{project.name}</h1>
+            <h1 className="text-2xl font-semibold font-heading">{project.name}</h1>
             <p className="text-text-secondary mt-2">{project.description}</p>
             <div className="flex gap-4 mt-6">
                 <a

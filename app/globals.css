@@ -19,6 +19,10 @@
 
     --input-bg: #ebeade;
     --input-border: #b8b6a3;
+
+    --font-sans: var(--font-space-grotesk);
+    --font-heading: var(--font-fraunces);
+    --font-mono: var(--font-geist-mono);
 }
 
 .dark {
@@ -51,13 +55,14 @@
     --color-text-tertiary: var(--text-tertiary);
     --color-input-bg: var(--input-bg);
     --color-input-border: var(--input-border);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
     --color-accent: var(--accent);
+    --font-sans: var(--font-sans);
+    --font-heading: var(--font-heading);
+    --font-mono: var(--font-mono);
 }
 
 body {
     background: var(--background);
     color: var(--text-primary);
-    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }

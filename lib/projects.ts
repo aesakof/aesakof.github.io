@@ -14,7 +14,7 @@ export const projects: Project[] = [
         "url": "https://aesakof-next-starter-one.vercel.app/",
         "repoUrl": "https://github.com/aesakof/aesakof-next-starter",
         "image": "/projects/nextjs-boilerplate.png",
-        "description": "DESCRIPTION HERE"
+        "description": "Some more text to get a better idea how everything looks"
     },
     {
         "slug": "pokedex",
@@ -22,7 +22,7 @@ export const projects: Project[] = [
         "url": "https://aesakof.github.io/pokedex/",
         "repoUrl": "https://github.com/aesakof/pokedex",
         "image": "/projects/pokedex.png",
-        "description": "DESCRIPTION HERE"
+        "description": "Filler text! Filler text! Filler text! Filler text! Filler text! Filler text! Filler text!"
     },
     {
         "slug": "dummy1",

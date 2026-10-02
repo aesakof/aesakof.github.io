@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import Image from "next/image"
 
 type CardProps = {
-    image?: { src: string; alt: string; width: number; height: number };
+    image?: { src: string; alt: string; width: number; height: number, priority?: boolean };
     title?: string;
     description?: string;
     children?: ReactNode;
@@ -20,6 +20,7 @@ export default function Card({ image, title, description, children, footer, dang
                     alt={image.alt}
                     width={image.width}
                     height={image.height}
+                    priority={image.priority}
                     className="w-full aspect-video object-cover"
                 />
             ) : (
@@ -27,7 +28,7 @@ export default function Card({ image, title, description, children, footer, dang
             )}
             {(title || description) && (
                 <div className={`p-6 flex-1 ${children ? "pb-4" : ""}`}>
-                    {title && <h3 className="text-base font-semibold leading-none text-text-primary">{title}</h3>}
+                    {title && <h3 className="text-base font-semibold leading-none text-text-primary font-heading">{title}</h3>}
                     {description && <p className="mt-1.5 text-sm text-text-secondary">{description}</p>}
                 </div>
             )}

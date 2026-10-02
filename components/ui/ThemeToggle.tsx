@@ -12,9 +12,8 @@ export default function ThemeToggle() {
             className="p-2 hover:bg-surface rounded-sm"
             aria-label="Toggle theme"
         >
-            <span suppressHydrationWarning>
-                {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-            </span>
+            <Sun size={18} className="hidden dark:block" />
+            <Moon size={18} className="block dark:hidden" />
         </button>
     )
 }

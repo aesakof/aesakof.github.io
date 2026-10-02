@@ -26,9 +26,9 @@ export default function NavBar() {
     const closeMenu = () => setSmallMenuOpen(false)
 
     return (
-        <header className="bg-surface-raised border-b border-border text-text-primary p-2 relative">
-            <div className="flex justify-between items-center">
-                <Link href="/" className="px-4 py-2">Alex Esakof</Link>
+        <header className="bg-surface-raised border-b border-border text-text-primary relative">
+            <div className="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+                <Link href="/" className="px-4 py-2 -ml-4 hover:bg-surface rounded-sm font-semibold tracking-tight text-xl font-heading">Alex Esakof</Link>
                 <div className="md:flex hidden">
                     {links.map(link => (
                         <Link key={link.href} href={link.href} className="px-3 py-2 hover:bg-surface rounded-sm">
