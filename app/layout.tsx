@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Space_Grotesk, Instrument_Sans, Fraunces } from "next/font/google";
+import { Geist_Mono, Space_Grotesk, Fraunces } from "next/font/google";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import "./globals.css";
 
@@ -22,8 +22,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "[Project Name Here]",
-    description: "[Project description here]",
+    title: "Alex Esakof",
+    description: "The personal website and developer portfolio of Alex Esakof",
+    openGraph: {
+        title: "Alex Esakof",
+        description: "The personal website and developer portfolio of Alex Esakof",
+        url: "https://aesakof.github.io",
+        siteName: "Alex Esakof",
+        type: "website",
+        images: [
+            {
+                url: "https://aesakof.github.io/og-image.png",
+                width: 1200,
+                height: 630,
+            },
+        ],
+    },
+        twitter: {
+        card: "summary_large_image",
+        title: "Alex Esakof",
+        description: "Personal portfolio and projects",
+        images: ["https://aesakof.github.io/og-image.png"],
+    },
 };
 
 export default function RootLayout({
