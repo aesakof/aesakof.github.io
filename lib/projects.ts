@@ -3,8 +3,10 @@ export type Project = {
     name: string,
     url: string,
     repoUrl: string,
-    image?: string,
+    coverImage?: string,
+    images?: string[],
     description: string
+    tags?: []
 }
 
 export const projects: Project[] = [
@@ -13,23 +15,37 @@ export const projects: Project[] = [
         "name": "Next.js Boilerplate",
         "url": "https://aesakof-next-starter-one.vercel.app/",
         "repoUrl": "https://github.com/aesakof/aesakof-next-starter",
-        "image": "/projects/nextjs-boilerplate.png",
-        "description": "Some more text to get a better idea how everything looks"
+        "coverImage": "/projects/nextjs-boilerplate.png",
+        "images": [
+            "/projects/pokedex.png",
+        ],
+        "description": "Some more text to get a better idea how everything looks",
+        "tags": []
     },
     {
         "slug": "pokedex",
         "name": "Pokedex",
         "url": "https://aesakof.github.io/pokedex/",
         "repoUrl": "https://github.com/aesakof/pokedex",
-        "image": "/projects/pokedex.png",
-        "description": "Filler text! Filler text! Filler text! Filler text! Filler text! Filler text! Filler text!"
+        "coverImage": "/projects/pokedex.png",
+        "images": [
+            "/projects/nextjs-boilerplate.png",
+            "/projects/pokedex.png",
+            "/projects/nextjs-boilerplate.png",
+        ],
+        "description": "Filler text! Filler text! Filler text! Filler text! Filler text! Filler text! Filler text!",
+        "tags": []
     },
     {
         "slug": "dummy1",
         "name": "DUMMY PROJECT",
         "url": "https://aesakof.github.io/",
         "repoUrl": "https://github.com/aesakof/",
-        "image": "",
-        "description": "DESCRIPTION HERE"
+        "coverImage": "",
+        "images": [
+            
+        ],
+        "description": "DESCRIPTION HERE",
+        "tags": []
     },
 ]

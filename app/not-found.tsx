@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import LinkButton from "@/components/ui/LinkButton"
 
 export default function NotFound() {

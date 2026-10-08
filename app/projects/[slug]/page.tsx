@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
-import Image from "next/image"
 import { projects } from "@/lib/projects"
+import ImageCarousel from "@/components/ui/ImageCarousel"
+import LinkButton from "@/components/ui/LinkButton"
 
 export function generateStaticParams() {
     return projects.map(project => ({
@@ -17,35 +18,24 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     }
 
     return (
-        <div className="p-6 max-w-3xl mx-auto">
-            {project.image && (
-                <Image
-                    src={project.image}
-                    alt={project.name}
-                    width={1280}
-                    height={720}
-                    className="w-full aspect-video object-cover rounded-lg mb-6"
-                />
-            )}
-            <h1 className="text-2xl font-semibold font-heading">{project.name}</h1>
-            <p className="text-text-secondary mt-2">{project.description}</p>
-            <div className="flex gap-4 mt-6">
-                <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-sm bg-surface-raised border border-border hover:border-text-secondary transition-colors"
-                >
-                    View Live
-                </a>
-                <a
-                    href={project.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-sm bg-surface-raised border border-border hover:border-text-secondary transition-colors"
-                >
-                    View Repo
-                </a>
+        <div className="max-w-7xl mx-auto px-6 py-12 w-full">
+            <h1 className="text-4xl font-semibold font-heading mb-4">{project.name}</h1>
+
+            {/* tags row goes here once the data model supports it */}
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
+                <div className="lg:col-span-3">
+                    <ImageCarousel images={project.images ?? []} alt={project.name} />
+                    <div className="flex gap-4 mt-8">
+                        <LinkButton href={project.url} variant="primary">View Live</LinkButton>
+                        <LinkButton href={project.repoUrl} variant="secondary">GitHub</LinkButton>
+                    </div>
+                </div>
+
+                <div className="lg:col-span-2">
+                    <div className="flex gap-4 mt-6 mb-8">
+                        <p className="text-text-secondary">{project.description}</p>
+                    </div>
+                </div>
             </div>
         </div>
     )
