@@ -6,6 +6,9 @@
     --background: #e1e0d3;
     --foreground: #011f4b;
 
+    --primary: #011f4b;
+    --primary-foreground: #e1e0d3;
+
     --surface: #ddddce;
     --surface-raised: #ebeade;
 
@@ -28,6 +31,9 @@
 .dark {
     --background: #0A0E15;
     --foreground: #ecebe0;
+
+    --primary: #ecebe0;
+    --primary-foreground: #011f4b;
 
     --surface: #10141C;
     --surface-raised: #161B25;
@@ -59,6 +65,8 @@
     --font-sans: var(--font-sans);
     --font-heading: var(--font-heading);
     --font-mono: var(--font-mono);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
 }
 
 body {

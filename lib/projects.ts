@@ -6,7 +6,7 @@ export type Project = {
     coverImage?: string,
     images?: string[],
     description: string
-    tags?: []
+    tags?: string[]
 }
 
 export const projects: Project[] = [
@@ -20,7 +20,11 @@ export const projects: Project[] = [
             "/projects/pokedex.png",
         ],
         "description": "Some more text to get a better idea how everything looks",
-        "tags": []
+        "tags": [
+            "Next.js",
+            "Typescript",
+            "Prisma"
+        ]
     },
     {
         "slug": "pokedex",

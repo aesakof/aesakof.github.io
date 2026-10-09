@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 import Link from "next/link"
+import { ExternalLink } from "lucide-react"
 
 type ButtonProps = {
     children: ReactNode,
@@ -7,6 +8,7 @@ type ButtonProps = {
     size?: "sm" | "md" | "lg" | "xl",
     fullWidth?: boolean,
     href: string
+    external?: boolean
 }
 
 export default function Button({
@@ -14,12 +16,13 @@ export default function Button({
     variant = "primary",
     size = "md",
     fullWidth = false,
-    href
+    href,
+    external = false
 }: ButtonProps) {
 
     const variantClasses = {
-        primary: "bg-blue-600 hover:bg-blue-700 active:bg-blue-900 text-white",
-        secondary: "border border-border text-text-primary hover:bg-surface active:bg-surface",
+        primary: "bg-primary text-primary-foreground hover:opacity-90 active:opacity-60",
+        secondary: "border border-border text-text-primary hover:bg-surface active:bg-border",
         danger: "bg-red-600 hover:bg-red-700 active:bg-red-900 text-white",
     }
 
@@ -33,14 +36,16 @@ export default function Button({
     return (
         <Link
             href={href}
+            target={external ? "_blank" : undefined}
             className={`
-                transition-colors font-medium
+                transition font-medium inline-flex items-center justify-center gap-2
                 ${fullWidth ? "w-full" : ""} 
                 ${sizeClasses[size]} 
                 ${variantClasses[variant]}
             `}
         >
             {children}
+            {external && <ExternalLink size="1em" aria-hidden="true" />}
         </Link>
     )
 }
