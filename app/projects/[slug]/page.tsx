@@ -3,7 +3,44 @@ import { projects } from "@/lib/projects"
 import ImageCarousel from "@/components/ui/ImageCarousel"
 import LinkButton from "@/components/ui/LinkButton"
 import Badge from "@/components/ui/Badge"
-import { ExternalLink } from "lucide-react"
+import type { Metadata } from "next"
+import Card from "@/components/ui/Card"
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params
+    const project = projects.find(p => p.slug === slug)
+
+    if (!project) {
+        return { title: "Project not found" }
+    }
+
+    const title = `${project.name} | Alex Esakof`
+
+    return {
+        title,
+        description: project.blurb,
+        openGraph: {
+            title,
+            description: project.blurb,
+            url: `https://aesakof.github.io/projects/${project.slug}`,
+            siteName: "Alex Esakof",
+            type: "website",
+            images: [
+                {
+                    url: "https://aesakof.github.io/og-image.png",
+                    width: 1200,
+                    height: 630,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description: project.blurb,
+            images: ["https://aesakof.github.io/og-image.png"],
+        },
+    }
+}
 
 
 export function generateStaticParams() {
@@ -41,9 +78,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 </div>
 
                 <div className="lg:col-span-2">
-                    <div className="flex gap-4 mt-6 mb-8">
-                        <p className="text-text-secondary">{project.description}</p>
-                    </div>
+                    <Card className="lg:col-span-2 self-start">
+                        <p className="text-lg leading-relaxed text-text-primary">{project.description}</p>
+                    </Card>
                 </div>
             </div>
         </div>

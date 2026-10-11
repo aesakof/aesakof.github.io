@@ -16,14 +16,23 @@ export default function ProjectGallery({ images, alt }: { images: string[], alt:
 
     return (
         <div className="relative">
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-surface">
-                <Image
-                    src={images[index]}
-                    alt={`${alt} screenshot ${index + 1}`}
-                    fill
-                    className="object-cover"
-                    priority={index === 0}
-                />
+            <div className="overflow-hidden rounded-lg bg-surface">
+                <div
+                    className="flex transition-transform duration-500 ease-out motion-reduce:transition-none"
+                    style={{ transform: `translateX(-${index * 100}%)` }}
+                >
+                    {images.map((src, i) => (
+                        <div key={i} className="relative aspect-video w-full shrink-0" aria-hidden={i !== index}>
+                            <Image
+                                src={src}
+                                alt={`${alt} screenshot ${i + 1}`}
+                                fill
+                                className="object-cover"
+                                priority={i === 0}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
 
             {images.length > 1 && (

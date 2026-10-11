@@ -15,7 +15,7 @@ export default function Projects() {
                             image={project.coverImage ? { src: project.coverImage, alt: project.name, width: 640, height: 360, priority: index < 3 } : undefined}
                             className="hover:border-text-secondary transition-colors h-full"
                             title={project.name}
-                            description={project.description}
+                            description={project.blurb}
                         />
                     </Link>
                 ))}

@@ -14,7 +14,7 @@ type CardProps = {
 export default function Card({ image, title, description, children, footer, danger, className = "" }: CardProps) {
     return (
         <div className={`rounded-lg border bg-surface-raised flex flex-col overflow-hidden ${danger ? "border-red-500/30" : "border-border"} ${className}`}>
-            {image ? (
+            {image && (
                 <Image
                     src={image.src}
                     alt={image.alt}
@@ -23,8 +23,6 @@ export default function Card({ image, title, description, children, footer, dang
                     priority={image.priority}
                     className="w-full aspect-video object-cover"
                 />
-            ) : (
-                <div className="w-full aspect-video bg-surface" />
             )}
             {(title || description) && (
                 <div className={`p-6 flex-1 ${children ? "pb-4" : ""}`}>
@@ -33,7 +31,7 @@ export default function Card({ image, title, description, children, footer, dang
                 </div>
             )}
             {children && (
-                <div className="px-6 pb-6">
+                <div className={`px-6 pb-6 ${title || description ? "" : "pt-6"}`}>
                     {children}
                 </div>
             )}
