@@ -4,6 +4,7 @@ export type Project = {
     url: string,
     repoUrl: string,
     coverImage?: string,
+    featured?: boolean,
     images?: string[],
     blurb: string,
     description: string
@@ -17,6 +18,7 @@ export const projects: Project[] = [
         "url": "https://aesakof-next-starter-one.vercel.app/",
         "repoUrl": "https://github.com/aesakof/aesakof-next-starter",
         "coverImage": "/projects/nextjs-boilerplate.png",
+        "featured": true,
         "images": [
             "/projects/nextjs-boilerplate.png",
             "/projects/nextjs-boilerplate2.png",
@@ -41,6 +43,7 @@ export const projects: Project[] = [
         "url": "https://aesakof.github.io/pokedex/",
         "repoUrl": "https://github.com/aesakof/pokedex",
         "coverImage": "/projects/pokedex.png",
+        "featured": false,
         "images": [
             "/projects/pokedex.png",
             "/projects/pokedex2.png",
