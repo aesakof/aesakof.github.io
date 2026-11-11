@@ -5,6 +5,7 @@ import "./globals.css";
 
 import NavBar from "@/components/ui/NavBar";
 import Footer from "@/components/ui/Footer";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 const spaceGrotesk = Space_Grotesk({
     variable: "--font-space-grotesk",
@@ -65,6 +66,7 @@ export default function RootLayout({
                     disableTransitionOnChange
                 >
                     <NavBar />
+                    <Breadcrumbs />
                     <main className="flex flex-col flex-1">{children}</main>
                     <Footer />
                 </ThemeProvider>

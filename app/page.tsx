@@ -14,11 +14,17 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-7xl flex-1 items-center px-6 py-16 lg:py-24">
             <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
                 <div>
+                    <p className="mb-2 max-w-xl text-md text-text-secondary">
+                        Software Developer
+                    </p>
                     <h1 className="font-heading text-5xl font-semibold tracking-tight sm:text-6xl">
                         Alex Esakof
                     </h1>
-                    <p className="mt-6 max-w-xl text-xl text-text-secondary">
-                        Software and QA engineer building full stack web applications.
+                    <p className="mt-6 max-w-xl text-xl">
+                        This is where I make things on the internet.
+                    </p>
+                    <p className="mt-2 max-w-xl text-md text-text-secondary">
+                        Full-stack web apps, side projects, and whatever else I&apos;m building.
                     </p>
                     <div className="mt-6 flex flex-wrap gap-2">
                         {stack.map((tech) => (
