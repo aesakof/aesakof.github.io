@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutMe() {
     return (
-        <div className="mx-auto w-full max-w-7xl flex-1 px-6 py-16 lg:py-24">
+        <div className="mx-auto w-full max-w-7xl flex-1 px-6 py-12">
             <div className="max-w-2xl">
                 <h1 className="font-heading text-5xl font-semibold tracking-tight">
                     About me
@@ -20,7 +20,7 @@ export default function AboutMe() {
                         I&apos;m Alex! I grew up outside Boston and got my B.S. in Computer Science from Brandeis University in 2016. I then spent two years as a Technical Analyst and six as a QA Engineer, learning how products are built and, more usefully, where they break.
                     </p>
                     <p>
-                        I kept building on the side the whole time: a Python tool for work, a React Pokedex back when I was first learning React, and most recently a full-stack Next.js starter that I now use as the base for new projects, including this site.
+                        I kept building on the side the whole time: a Python tool for work, a React Pokedex back when I was first learning React, and most recently a full-stack Next.js starter that I now use as the base for new projects (including this site!).
                     </p>
                 </div>
                 <p className="mt-4 text-lg leading-relaxed">

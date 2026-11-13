@@ -6,8 +6,8 @@ import { projects } from "@/lib/projects"
 
 export default function Projects() {
     return (
-        <div className="px-6 py-24 mx-auto max-w-7xl">
-            <h1 className="text-4xl font-semibold mb-6 font-heading">Projects</h1>
+        <div className="px-6 py-12 mx-auto max-w-7xl">
+            <h1 className="text-5xl font-semibold mb-6 font-heading">Projects</h1>
             <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6">
                 {projects.map((project, index) => (
                     <Link key={project.slug} href={`/projects/${project.slug}`}>
