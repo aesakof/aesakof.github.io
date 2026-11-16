@@ -2,9 +2,13 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Fragment } from "react/jsx-runtime"
+import { Fragment } from "react"
 
-export default function Breadcrumbs() {
+export default function Breadcrumbs({
+    labels = {},
+}: {
+    labels?: Record<string, string>;
+}) {
     const pathname = usePathname()
     const pathSegments = pathname.split('/').filter(Boolean)
 
@@ -21,7 +25,7 @@ export default function Breadcrumbs() {
                 return (
                     <Fragment key={href}>
                         <span className="px-3">/</span>
-                        <Link href={href} className="hover:underline">{segment}</Link>
+                        <Link href={href} className="hover:underline">{labels[segment] ?? segment}</Link>
                     </Fragment>
                     
                 )
