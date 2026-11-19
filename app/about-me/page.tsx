@@ -72,7 +72,7 @@ export default function AboutMe() {
                         width={800}
                         height={1000}
                         priority
-                        className="aspect-[4/5] w-full rounded-xl border border-border object-cover"
+                        className="aspect-4/5 w-full rounded-xl border border-border object-cover"
                     />
                 </div>
             </div>
